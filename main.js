@@ -11,4 +11,18 @@ function ShoImg(index) {
     })
 }
 
+function nextImg() {
+    curretINdex = (curretINdex + 1) % images.length
+    ShoImg(curretINdex)
+}
+
+function oddimg() {
+    curretINdex = (curretINdex - 1 + images.length) % images.length
+    ShoImg(curretINdex)
+}
+document.getElementById('next').addEventListener('click', nextImg)
+document.getElementById('prev').addEventListener('click', oddimg)
+
 ShoImg(curretINdex)
+
+setInterval(nextImg, 3000)
